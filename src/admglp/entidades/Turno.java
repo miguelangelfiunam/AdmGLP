@@ -1,4 +1,4 @@
-package admglp;
+package admglp.entidades;
 
 import java.util.Date;
 import java.util.List;
