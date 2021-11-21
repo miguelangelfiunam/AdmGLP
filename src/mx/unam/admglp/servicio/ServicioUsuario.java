@@ -13,4 +13,8 @@ public interface ServicioUsuario {
 	public void actualizar(Usuario usuario);
 
 	public void borrar(Integer id);
+	
+	List<Usuario> getContactosByIdEstaus(Integer idEstatus);
+
+	List<Usuario> getContactosByIdRol(Integer idRol);
 }

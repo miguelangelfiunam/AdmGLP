@@ -11,6 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -30,6 +32,13 @@ import com.sun.istack.NotNull;
  */
 @Entity
 @Table(name = "t_usuario")
+@NamedQueries(
+		{
+		@NamedQuery(name = "contactosPorEstatus", query = "SELECT u FROM Usuario u WHERE u.estatus = :idEstatus"),
+		@NamedQuery(name = "contactosPorRol", query = "SELECT u FROM Usuario u "
+				+ "JOIN u.usuariosRoles ur "
+				+ "JOIN ur.rol r ON r.idRol = :idRol")
+		})
 public class Usuario {
 	private Integer idUsuario; // Identificador de usuario
 	private Contra contra;

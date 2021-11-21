@@ -6,7 +6,7 @@ import mx.unam.admglp.modelo.dao.UsuarioImpl;
 import mx.unam.admglp.modelo.entidades.Usuario;
 
 public class ServicioUsuarioImpl implements ServicioUsuario {
-	
+
 	private static ServicioUsuarioImpl instance;
 
 	private ServicioUsuarioImpl() {
@@ -53,6 +53,20 @@ public class ServicioUsuarioImpl implements ServicioUsuario {
 		// TODO Auto-generated method stub
 		UsuarioImpl usuarioImpl = new UsuarioImpl();
 		usuarioImpl.delete(id);
+	}
+
+	@Override
+	public List<Usuario> getContactosByIdEstaus(Integer idEstatus) {
+		// TODO Auto-generated method stub
+		UsuarioImpl usuarioImpl = new UsuarioImpl();
+		return usuarioImpl.getContactosByIdEstaus(idEstatus);
+	}
+
+	@Override
+	public List<Usuario> getContactosByIdRol(Integer idRol) {
+		// TODO Auto-generated method stub
+		UsuarioImpl usuarioImpl = new UsuarioImpl();
+		return usuarioImpl.getContactosByIdRol(idRol);
 	}
 
 }

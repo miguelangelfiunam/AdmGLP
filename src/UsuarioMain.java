@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import mx.unam.admglp.funciones.Funciones;
+import mx.unam.admglp.modelo.entidades.Contra;
 import mx.unam.admglp.modelo.entidades.Usuario;
 import mx.unam.admglp.modelo.hibernate.HibernateUtil;
+import mx.unam.admglp.servicio.ServicioContra;
+import mx.unam.admglp.servicio.ServicioContraImpl;
 import mx.unam.admglp.servicio.ServicioRol;
 import mx.unam.admglp.servicio.ServicioUsuario;
 import mx.unam.admglp.servicio.ServicioUsuarioImpl;
@@ -16,6 +19,7 @@ public class UsuarioMain {
 	static ServicioUsuario servicioUsuario;
 	static ServicioUsuarioRol servicioUsuarioRol;
 	static ServicioRol servicioRol;
+	static ServicioContra servicioContra;
 
 	public static void cargaMenu() {
 		boolean salir = false;
@@ -27,6 +31,8 @@ public class UsuarioMain {
 			System.out.println(i++ + ". Elimina Usuario");
 			System.out.println(i++ + ". Obtener Usuario");
 			System.out.println(i++ + ". Obtener todo");
+			System.out.println(i++ + ". Obtener por estatus");
+			System.out.println(i++ + ". Obtener por id de rol");
 
 			System.out.println(i++ + ". Salir");
 			try {
@@ -50,6 +56,12 @@ public class UsuarioMain {
 					getAll();
 					break;
 				case 6:
+					getByIdEstatus();
+					break;
+				case 7:
+					getByIdRol();
+					break;
+				case 8:
 					salir = true;
 					break;
 				default:
@@ -85,6 +97,23 @@ public class UsuarioMain {
 		System.out.println("");
 		do {
 			try {
+				Contra contra = new Contra();
+				contra.setFecRegistro(fechaReg);
+				contra.setFecActualizacion(fechaAct);
+
+				System.out.print("Ingresa cifrado de la contraseña: ");
+				String cifrado = sn.nextLine();
+				contra.setContraCifrado(cifrado);
+
+				System.out.print("Ingresa el status de la contraseña: ");
+				Integer estatus = sn.nextInt();
+				sn.nextLine();
+				contra.setEstatus(estatus);
+
+				servicioContra.guardar(contra);
+				
+				
+				
 				System.out.print("Ingresa el apodo: ");
 				apodo = sn.nextLine();
 				System.out.print("Ingresa el correo1: ");
@@ -112,6 +141,7 @@ public class UsuarioMain {
 				status = sn.nextInt();
 				sn.nextLine();
 				usu = new Usuario();
+				usu.setContra(contra);
 				usu.setApodo(apodo);
 				usu.setCorreo1(correo1);
 				usu.setCorreo2(correo2);
@@ -271,11 +301,60 @@ public class UsuarioMain {
 		}
 
 	}
+	
+	public static void getByIdEstatus() {
+		try {
+			System.out.print("Ingresa el estatus: ");
+			Integer idEstatus = Integer.valueOf(sn.nextInt());
+			sn.nextLine();
+			List<Usuario> usuarios = servicioUsuario.getContactosByIdEstaus(idEstatus);
+			if (usuarios != null) {
+				if (usuarios.isEmpty()) {
+					System.out.println("La lista de usuarios no tiene elementos");
+				} else {
+					for (Usuario usuario : usuarios) {
+						System.out.println(usuario);
+					}
+				}
+			} else {
+				System.out.println("La lista de usuarios es null");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al obtener la lista: " + e.getMessage());
+		}
+
+	}
+	
+	public static void getByIdRol() {
+		try {
+			System.out.print("Ingresa el id de rol: ");
+			Integer idRol = Integer.valueOf(sn.nextInt());
+			sn.nextLine();
+			List<Usuario> usuarios = servicioUsuario.getContactosByIdRol(idRol);
+			if (usuarios != null) {
+				if (usuarios.isEmpty()) {
+					System.out.println("La lista de usuarios no tiene elementos");
+				} else {
+					for (Usuario usuario : usuarios) {
+						System.out.println(usuario);
+					}
+				}
+			} else {
+				System.out.println("La lista de usuarios es null");
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("Error al obtener la lista: " + e.getMessage());
+		}
+
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		HibernateUtil.init();
 		servicioUsuario = ServicioUsuarioImpl.getInstance();
+		servicioContra =  ServicioContraImpl.getInstance();
 		cargaMenu();
 	}
 

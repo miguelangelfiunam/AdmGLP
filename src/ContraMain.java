@@ -83,7 +83,6 @@ public class ContraMain {
 				Usuario usuario = servicioUsuario.obtener(idUsuario);
 				if (usuario != null) {
 					contra = new Contra();
-					contra.setUsuario(usuario);
 					contra.setFecRegistro(fechaReg);
 					contra.setFecActualizacion(fechaAct);
 
@@ -149,6 +148,9 @@ public class ContraMain {
 		Integer id;
 		do {
 			try {
+				System.out.print("Ingresa el id e contraseña: ");
+				id = Integer.valueOf(sn.nextInt());
+				sn.nextLine();
 				servicioContra.borrar(id);
 				System.out.println("Contra borrado");
 				salir = true;
