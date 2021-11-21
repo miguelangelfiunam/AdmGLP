@@ -225,6 +225,7 @@ public class UsuarioMain {
 				servicioUsuario.borrar(id);
 
 				System.out.println("Usuario borrado");
+				salir = true;
 			} catch (Exception e) {
 				System.out.println("Campo incorrecto: " + e.getMessage());
 			}
@@ -245,6 +246,7 @@ public class UsuarioMain {
 				} else {
 					System.out.println(u);
 				}
+				salir = true;
 			} catch (Exception e) {
 				System.out.println("Campo incorrecto: " + e.getMessage());
 			}
@@ -276,8 +278,6 @@ public class UsuarioMain {
 		// TODO Auto-generated method stub
 		HibernateUtil.init();
 		servicioUsuario = ServicioUsuarioImpl.getInstance();
-		servicioUsuarioRol = ServicioUsuarioRolImpl.getInstance();
-		servicioRol = ServicioRolImpl.getInstance();
 		cargaMenu();
 	}
 

@@ -30,5 +30,6 @@
         <mapping class="mx.unam.admglp.modelo.entidades.Usuario"/>
         <mapping class="mx.unam.admglp.modelo.entidades.UsuarioRol"/>
         <mapping class="mx.unam.admglp.modelo.entidades.Rol"/>
+        <mapping class="mx.unam.admglp.modelo.entidades.Acceso"/>
     </session-factory>
 </hibernate-configuration>
