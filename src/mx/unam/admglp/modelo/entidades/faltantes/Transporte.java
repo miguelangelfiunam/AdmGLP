@@ -1,4 +1,4 @@
-package mx.unam.admglp.modelo.entidades;
+package mx.unam.admglp.modelo.entidades.faltantes;
 
 import java.util.Calendar;
 import java.util.Date;
