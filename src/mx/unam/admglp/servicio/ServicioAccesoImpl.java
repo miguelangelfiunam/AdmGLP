@@ -35,17 +35,17 @@ public class ServicioAccesoImpl implements ServicioAcceso {
 	}
 
 	@Override
-	public void guardar(Acceso rol) {
+	public void guardar(Acceso acceso) {
 		// TODO Auto-generated method stub
 		AccesoImpl accesoImpl = new AccesoImpl();
-		accesoImpl.save(rol);
+		accesoImpl.save(acceso);
 	}
 
 	@Override
-	public void actualizar(Acceso rol) {
+	public void actualizar(Acceso acceso) {
 		// TODO Auto-generated method stub
 		AccesoImpl accesoImpl = new AccesoImpl();
-		accesoImpl.update(rol);
+		accesoImpl.update(acceso);
 	}
 
 	@Override

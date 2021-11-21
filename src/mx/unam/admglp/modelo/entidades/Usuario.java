@@ -10,7 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
@@ -30,6 +32,7 @@ import com.sun.istack.NotNull;
 @Table(name = "t_usuario")
 public class Usuario {
 	private Integer idUsuario; // Identificador de usuario
+	private Contra contra;
 	private String apodo; // Seudonimo del usuario en la aplicacion
 	private String correo1; // Correo electronico
 	private String correo2; // Correo electronico
@@ -50,6 +53,12 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getIdUsuario() {
 		return idUsuario;
+	}
+
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_contra", referencedColumnName = "id_contra")
+	public Contra getContra() {
+		return contra;
 	}
 
 	@Column(name = "usuario_vc_apodo", length = 40, unique = true)
@@ -193,13 +202,17 @@ public class Usuario {
 		this.usuariosRoles = usuariosRoles;
 	}
 
+	public void setContra(Contra contra) {
+		this.contra = contra;
+	}
+
 	@Override
 	public String toString() {
 		return "Usuario [idUsuario=" + idUsuario + ", apodo=" + apodo + ", correo1=" + correo1 + ", correo2=" + correo2
 				+ ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", edad=" + edad
 				+ ", fechaNacimiento=" + fechaNacimiento + ", telefono1=" + telefono1 + ", telefono2=" + telefono2
 				+ ", fecRegistro=" + fecRegistro + ", fecActualizacion=" + fecActualizacion + ", estatus=" + estatus
-				+ ", usuariosRoles=" + usuariosRoles + "]";
+				+ ", usuariosRoles=" + usuariosRoles + ", contra=" + contra + "]";
 	}
 
 }

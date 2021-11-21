@@ -25,11 +25,12 @@
         <!-- Drop and re-create the database schema on startup -->
         <property name="hbm2ddl.auto">none</property>
         
-        <!-- <property name="hibernate.enable_lazy_load_no_trans">true</property>-->
+<!--         <property name="hibernate.enable_lazy_load_no_trans">true</property> -->
         
         <mapping class="mx.unam.admglp.modelo.entidades.Usuario"/>
         <mapping class="mx.unam.admglp.modelo.entidades.UsuarioRol"/>
         <mapping class="mx.unam.admglp.modelo.entidades.Rol"/>
         <mapping class="mx.unam.admglp.modelo.entidades.Acceso"/>
+        <mapping class="mx.unam.admglp.modelo.entidades.Contra"/>
     </session-factory>
 </hibernate-configuration>

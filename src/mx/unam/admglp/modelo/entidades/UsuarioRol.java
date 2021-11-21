@@ -91,4 +91,10 @@ public class UsuarioRol {
 	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
+
+	@Override
+	public String toString() {
+		return "UsuarioRol [idUsuarioRol=" + idUsuarioRol + ", fecRegistro=" + fecRegistro + ", fecActualizacion="
+				+ fecActualizacion + ", estatus=" + estatus + "]";
+	}
 }

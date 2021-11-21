@@ -7,11 +7,9 @@ import mx.unam.admglp.funciones.Funciones;
 import mx.unam.admglp.modelo.entidades.Usuario;
 import mx.unam.admglp.modelo.hibernate.HibernateUtil;
 import mx.unam.admglp.servicio.ServicioRol;
-import mx.unam.admglp.servicio.ServicioRolImpl;
 import mx.unam.admglp.servicio.ServicioUsuario;
 import mx.unam.admglp.servicio.ServicioUsuarioImpl;
 import mx.unam.admglp.servicio.ServicioUsuarioRol;
-import mx.unam.admglp.servicio.ServicioUsuarioRolImpl;
 
 public class UsuarioMain {
 	static Scanner sn = new Scanner(System.in);
@@ -188,7 +186,7 @@ public class UsuarioMain {
 					System.out.print("Ingresa el status(" + usu.getEstatus() + "): ");
 					status = sn.nextInt();
 					sn.nextLine();
-					
+
 					usu.setApodo(apodo);
 					usu.setCorreo1(correo1);
 					usu.setCorreo2(correo2);
@@ -269,7 +267,7 @@ public class UsuarioMain {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error al obtener la lista");
+			System.out.println("Error al obtener la lista: " + e.getMessage());
 		}
 
 	}
