@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-15">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/byte-buddy-1.11.12.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/classmate-1.5.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/FastInfoset-1.2.15.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/hibernate-commons-annotations-5.1.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/hibernate-core-5.5.8.Final.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/istack-commons-runtime-3.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/jandex-2.2.3.Final.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/javassist-3.27.0-GA.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/javax.activation-api-1.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/javax.persistence-api-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/jaxb-api-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/jaxb-runtime-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/jboss-logging-3.4.2.Final.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/jboss-transaction-api_1.2_spec-1.1.1.Final.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/stax-ex-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/hibernate/txw2-2.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/java/AdmGLP/lib/mariadb/mariadb-java-client-2.7.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
