@@ -45,7 +45,6 @@ public class Acceso {
 	@ManyToOne(targetEntity = Usuario.class, fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "id_usuario", nullable = false)
 	@Fetch(FetchMode.JOIN)
-	@NotNull
 	public Usuario getUsuario() {
 		return usuario;
 	}

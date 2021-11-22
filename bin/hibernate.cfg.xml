@@ -32,5 +32,8 @@
         <mapping class="mx.unam.admglp.modelo.entidades.Rol"/>
         <mapping class="mx.unam.admglp.modelo.entidades.Acceso"/>
         <mapping class="mx.unam.admglp.modelo.entidades.Contra"/>
+        <mapping class="mx.unam.admglp.modelo.entidades.Estado"/>
+        <mapping class="mx.unam.admglp.modelo.entidades.Municipio"/>
+        <mapping class="mx.unam.admglp.modelo.entidades.Asentamiento"/>
     </session-factory>
 </hibernate-configuration>
