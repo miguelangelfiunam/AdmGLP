@@ -32,7 +32,7 @@ public class Asentamiento extends Catalogo<Integer> {
 	@Id
 	@Column(name = "id_asentamiento")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer getId() {
+	public Integer getId() {
 		// TODO Auto-generated method stub
 		return id;
 	}
@@ -61,28 +61,28 @@ public class Asentamiento extends Catalogo<Integer> {
 
 	@Override
 	@Column(name = "asenta_vc_nombre", length = 150, nullable = false)
-	String getNombre() {
+	public String getNombre() {
 		// TODO Auto-generated method stub
 		return nombre;
 	}
 
 	@Override
 	@Column(name = "asenta_dt_fecha_registro", columnDefinition = "DATETIME", nullable = false)
-	Date getFecRegistro() {
+	public Date getFecRegistro() {
 		// TODO Auto-generated method stub
 		return fecRegistro;
 	}
 
 	@Override
 	@Column(name = "asenta_dt_fecha_actualizacion", columnDefinition = "DATETIME", nullable = true)
-	Date getFecActualizacion() {
+	public Date getFecActualizacion() {
 		// TODO Auto-generated method stub
 		return fecActualizacion;
 	}
 
 	@Override
 	@Column(name = "asenta_si_estatus", nullable = false)
-	Integer getEstatus() {
+	public Integer getEstatus() {
 		// TODO Auto-generated method stub
 		return estatus;
 	}
@@ -101,6 +101,13 @@ public class Asentamiento extends Catalogo<Integer> {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		return "Asentamiento [id=" + id +", clave=" + clave + ", codigoPostal=" + codigoPostal
+				+ ", tipo=" + tipo + ", nombre=" + nombre + ", fecRegistro=" + fecRegistro
+				+ ", fecActualizacion=" + fecActualizacion + ", estatus=" + estatus + ", municipio=" + municipio + "]";
 	}
 
 }

@@ -84,9 +84,8 @@ public class Municipio extends Catalogo<Integer> {
 
 	@Override
 	public String toString() {
-		return "Municipio [estado=" + estado + ", clave=" + clave + ", id=" + id + ", nombre=" + nombre
-				+ ", fecRegistro=" + fecRegistro + ", fecActualizacion=" + fecActualizacion + ", estatus=" + estatus
-				+ "]";
+		return "Municipio [id=" + id + ", clave=" + clave + ", nombre=" + nombre + ", fecRegistro=" + fecRegistro
+				+ ", fecActualizacion=" + fecActualizacion + ", estatus=" + estatus + ", estado=" + estado + "]";
 	}
 
 }
