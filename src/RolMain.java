@@ -82,7 +82,7 @@ public class RolMain {
 				System.out.print("Ingresa el nombre: ");
 				nombre = sn.nextLine();
 				rol.setNombre(nombre);
-				
+
 				System.out.print("Ingresa el tipo: ");
 				tipo = sn.nextLine();
 				rol.setTipo(tipo);
@@ -110,6 +110,10 @@ public class RolMain {
 		Boolean salir = false;
 		System.out.println("");
 		do {
+			List<Rol> roles = servicioRol.obtenerTodo();
+			for (Rol rol2 : roles) {
+				System.out.println("ID: " + rol2.getIdRol() + " Nombre: " + rol2.getNombre());
+			}
 			System.out.print("Ingresa el id para actualizar: ");
 			idRol = Integer.valueOf(sn.nextInt());
 			sn.nextLine();
@@ -119,7 +123,7 @@ public class RolMain {
 				try {
 					System.out.print("Ingresa la descripcion(" + rol.getNombre() + "): ");
 					nombre = sn.nextLine();
-					
+
 					System.out.print("Ingresa la descripcion(" + rol.getTipo() + "): ");
 					tipo = sn.nextLine();
 

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import mx.unam.admglp.funciones.Funciones;
 import mx.unam.admglp.modelo.entidades.Contra;
+import mx.unam.admglp.modelo.entidades.Rol;
 import mx.unam.admglp.modelo.entidades.Usuario;
 import mx.unam.admglp.modelo.hibernate.HibernateUtil;
 import mx.unam.admglp.servicio.ServicioContra;
@@ -183,6 +184,10 @@ public class UsuarioMain {
 		Usuario usu = null;
 		Boolean salir = false;
 		do {
+			List<Usuario> usuarios = servicioUsuario.obtenerTodo();
+			for (Usuario usu2 : usuarios) {
+				System.out.println("ID: " + usu2.getIdUsuario() + " Nombre: " + usu2.getApodo());
+			}
 			System.out.print("Ingresa el id para actualizar: ");
 			id = Integer.valueOf(sn.nextInt());
 			sn.nextLine();

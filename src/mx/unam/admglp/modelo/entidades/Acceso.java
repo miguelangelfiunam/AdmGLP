@@ -33,6 +33,8 @@ public class Acceso {
 	private Date fechaInicioAcceso;// Fecha de inicio de acceso
 	private Date fechaFinAcceso; // Fecha en que se termina el acceso (fin de sesión)
 	private String descripcion; // Descripción del acceso
+	private Date fecRegistro; // Fecha de registro
+	private Date fecActualizacion; // Fecha de actualizacion
 	private Integer estatus; // Estatus del acceso
 
 	@Id
@@ -65,6 +67,16 @@ public class Acceso {
 		return descripcion;
 	}
 
+	@Column(name = "acceso_dt_fecha_registro", columnDefinition = "DATETIME", nullable = false)
+	public Date getFecRegistro() {
+		return fecRegistro;
+	}
+
+	@Column(name = "acceso_dt_fecha_actualizacion", columnDefinition = "DATETIME", nullable = true)
+	public Date getFecActualizacion() {
+		return fecActualizacion;
+	}
+
 	@Column(name = "acceso_si_estatus")
 	@NotNull
 	public Integer getEstatus() {
@@ -91,6 +103,14 @@ public class Acceso {
 		this.descripcion = descripcion;
 	}
 
+	public void setFecRegistro(Date fecRegistro) {
+		this.fecRegistro = fecRegistro;
+	}
+
+	public void setFecActualizacion(Date fecActualizacion) {
+		this.fecActualizacion = fecActualizacion;
+	}
+
 	public void setEstatus(Integer estatus) {
 		this.estatus = estatus;
 	}
@@ -98,7 +118,8 @@ public class Acceso {
 	@Override
 	public String toString() {
 		return "Acceso [id=" + id + ", usuario=" + usuario + ", fechaInicioAcceso=" + fechaInicioAcceso
-				+ ", fechaFinAcceso=" + fechaFinAcceso + ", descripcion=" + descripcion + ", estatus=" + estatus + "]";
+				+ ", fechaFinAcceso=" + fechaFinAcceso + ", descripcion=" + descripcion + ", fecRegistro=" + fecRegistro
+				+ ", fecActualizacion=" + fecActualizacion + ", estatus=" + estatus + "]";
 	}
 
 }

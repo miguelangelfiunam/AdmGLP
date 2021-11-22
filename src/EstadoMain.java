@@ -106,6 +106,10 @@ public class EstadoMain {
 		System.out.println("");
 		do {
 			try {
+				List<Estado> estados = servicioEstado.obtenerTodo();
+				for (Estado estado2 : estados) {
+					System.out.println("ID: " + estado2.getId() + " Nombre: " + estado2.getNombre());
+				}
 				System.out.print("Ingresa el id de estado: ");
 				idEstado = Integer.valueOf(sn.nextInt());
 				sn.nextLine();

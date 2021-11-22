@@ -67,6 +67,8 @@ public class AccesoMain {
 	public static void guarda() {
 		Integer idUsuario;
 		Date fechaInicio = new Date();
+		Date fechaReg = new Date();
+		Date fechaAct = null;
 		Date fechaFin = null;
 		String descripcion;
 		Integer estatus;
@@ -76,7 +78,10 @@ public class AccesoMain {
 		System.out.println("");
 		do {
 			try {
-
+				List<Usuario> usuarios = servicioUsuario.obtenerTodo();
+				for (Usuario usuario : usuarios) {
+					System.out.println("ID: " + usuario.getIdUsuario() + " Apodo: " + usuario.getApodo());
+				}
 				System.out.print("Ingresa el id de usuario a relacionar con el acceso: ");
 				idUsuario = Integer.valueOf(sn.nextInt());
 				sn.nextLine();
@@ -91,6 +96,9 @@ public class AccesoMain {
 					System.out.print("Ingresa la descripcion: ");
 					descripcion = sn.nextLine();
 					acceso.setDescripcion(descripcion);
+
+					acceso.setFecRegistro(fechaReg);
+					acceso.setFecActualizacion(fechaAct);
 
 					System.out.print("Ingresa el status: ");
 					estatus = sn.nextInt();
@@ -112,6 +120,7 @@ public class AccesoMain {
 		Integer idAcceso;
 		String descripcion;
 		Integer estatus;
+		Date fechaAct = new Date();
 
 		Acceso acceso = null;
 		Boolean salir = false;
@@ -126,14 +135,14 @@ public class AccesoMain {
 				try {
 					System.out.print("Ingresa la descripcion(" + acceso.getDescripcion() + "): ");
 					descripcion = sn.nextLine();
-					
+
 					System.out.print("Ingresa el status(" + acceso.getEstatus() + "): ");
 					estatus = sn.nextInt();
 					sn.nextLine();
 
 					acceso.setDescripcion(descripcion);
 					acceso.setEstatus(estatus);
-
+					acceso.setFecActualizacion(fechaAct);
 					servicioAcceso.actualizar(acceso);
 					salir = true;
 				} catch (Exception e) {

@@ -48,13 +48,12 @@ public class Rol {
 		return tipo;
 	}
 
-	@Column(name = "rol_dt_fecha_registro", columnDefinition = "DATETIME")
-	@NotNull
+	@Column(name = "rol_dt_fecha_registro", columnDefinition = "DATETIME", nullable = false)
 	public Date getFecRegistro() {
 		return fecRegistro;
 	}
 
-	@Column(name = "rol_dt_fecha_actualizacion", columnDefinition = "DATETIME")
+	@Column(name = "rol_dt_fecha_actualizacion", columnDefinition = "DATETIME", nullable = true)
 	public Date getFecActualizacion() {
 		return fecActualizacion;
 	}

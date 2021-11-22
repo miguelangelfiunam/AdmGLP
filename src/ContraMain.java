@@ -21,7 +21,7 @@ public class ContraMain {
 		int opcion; // Guardaremos la opcion del contra
 		do {
 			int i = 1;
-			System.out.println(i++ + ". Guarda Contra");
+//			System.out.println(i++ + ". Guarda Contra");
 			System.out.println(i++ + ". Actualiza Contra");
 			System.out.println(i++ + ". Obtener Contra");
 			System.out.println(i++ + ". Obtener todo");
@@ -32,22 +32,22 @@ public class ContraMain {
 				opcion = sn.nextInt();
 				sn.nextLine();
 				switch (opcion) {
+//				case 1:
+//					guarda();
+//					break;
 				case 1:
-					guarda();
-					break;
-				case 2:
 					actualiza();
 					break;
-				case 3:
-					elimina();
-					break;
-				case 4:
+//				case 2:
+//					elimina();
+//					break;
+				case 2:
 					get();
 					break;
-				case 5:
+				case 3:
 					getAll();
 					break;
-				case 6:
+				case 4:
 					salir = true;
 					break;
 				default:

@@ -124,6 +124,10 @@ public class MunicipioMain {
 		System.out.println("");
 		do {
 			try {
+				List<Municipio> municipios = servicioMunicipio.obtenerTodo();
+				for (Municipio municipio2 : municipios) {
+					System.out.println("ID: " + municipio2.getId() + " Nombre: " + municipio2.getNombre());
+				}
 				System.out.print("Ingresa el id de municipio: ");
 				idMunicipio = Integer.valueOf(sn.nextInt());
 				sn.nextLine();
