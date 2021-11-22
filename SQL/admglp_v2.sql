@@ -74,7 +74,7 @@ PRIMARY KEY (id_empleado)
 #-----------------------------------------------------------------#
 CREATE TABLE c_estado (
 id_estado INT(11) NOT NULL AUTO_INCREMENT, 
-estado_c_clave char(2) NOT NULL,
+estado_c_clave char(2) NOT NULL UNIQUE,
 estado_vc_nombre VARCHAR(100) NOT NULL,
 estado_dt_fecha_registro DATETIME NOT NULL, 
 estado_dt_fecha_actualizacion DATETIME NULL,  

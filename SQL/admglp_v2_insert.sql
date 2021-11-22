@@ -406,17 +406,75 @@ VALUES (5, 2, NOW(), NULL, 10);
 #-----------------------------------------------------------------#
 #			Inserciones de estados												#
 #-----------------------------------------------------------------#
-INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, estado_dt_fecha_actualizacion, estado_si_estatus) VALUES ('15', "México", NOW(), NULL, 10);
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('01', "Aguascalientes", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('02', "Baja California", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('03', "Baja California Sur", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('04', "Campeche", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('05', "Coahuila de Zaragoza", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('06', "Colima", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('07', "Chiapas", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('08', "Chihuahua", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('09', "Ciudad de México", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('10', "Durango", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('11', "Guanajuato", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('12', "Guerrero", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('13', "Hidalgo", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('14', "Jalisco", NOW(), NULL, 20);
+
+INSERT INTO c_estado(estado_c_clave, estado_vc_nombre, estado_dt_fecha_registro, 
+estado_dt_fecha_actualizacion, estado_si_estatus) 
+VALUES ('15', "México", NOW(), NULL, 10);
 
 #-----------------------------------------------------------------#
 #			Inserciones de municipios											#
 #-----------------------------------------------------------------#
 INSERT INTO c_municipio(id_estado, municipio_c_clave, municipio_vc_nombre, municipio_dt_fecha_registro, municipio_dt_fecha_actualizacion, municipio_si_estado) 
-VALUES (1, '106', "Toluca", NOW(), NULL, 20);
+VALUES (15, '106', "Toluca", NOW(), NULL, 20);
 INSERT INTO c_municipio(id_estado, municipio_c_clave, municipio_vc_nombre, municipio_dt_fecha_registro, municipio_dt_fecha_actualizacion, municipio_si_estado) 
-VALUES (1, '001', "Acambay de Ruíz Castañeda", NOW(), NULL, 20);
+VALUES (15, '001', "Acambay de Ruíz Castañeda", NOW(), NULL, 20);
 INSERT INTO c_municipio(id_estado, municipio_c_clave, municipio_vc_nombre, municipio_dt_fecha_registro, municipio_dt_fecha_actualizacion, municipio_si_estado) 
-VALUES (1, '121', "Cuautitlán Izcalli", NOW(), NULL, 10);
+VALUES (15, '121', "Cuautitlán Izcalli", NOW(), NULL, 10);
 
 #-----------------------------------------------------------------#
 #			Inserciones de asentamientos										#
